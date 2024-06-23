@@ -112,12 +112,13 @@ EVP_PKEY *SM2_THRESHOLD_derive_complete_pubkey(const EVP_PKEY *self_key,
     if (eckey == NULL)
         return NULL;
 
+    // P2=[d2^-1]G
     P2 = EC_KEY_get0_public_key(eckey);
 
     eckey = EVP_PKEY_get0_EC_KEY(self_key);
     if (eckey == NULL)
         return NULL;
-
+    // d1
     d1 = EC_KEY_get0_private_key(eckey);
     group = EC_KEY_get0_group(eckey);
     libctx = ossl_ec_key_get_libctx(eckey);

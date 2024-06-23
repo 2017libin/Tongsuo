@@ -1,12 +1,12 @@
 CC=gcc
-CFLAGS=-I/Users/Paul/work/tmp/tongsuo/include
-LDFLAGS=-L/Users/Paul/work/tmp/tongsuo/lib
+CFLAGS=-I/home/chase511/code_2023/Tongsuo/include
+LDFLAGS=-L/home/chase511/code_2023/Tongsuo
 
 %.o: %.c
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 perf: sm.o
-	$(CC) -o sm sm.o -lcrypto $(LDFLAGS)
+	$(CC) -o sm sm.o -lcrypto $(LDFLAGS) -Wl,-rpath=..
 
 clean:
 	rm -rf *.o sm

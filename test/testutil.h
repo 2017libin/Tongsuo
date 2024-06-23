@@ -47,8 +47,8 @@
  * non-zero if the initialization was successful.
  */
 
-/* Adds a simple test case. */
 # define ADD_TEST(test_function) add_test(#test_function, test_function)
+/* Adds a simple test case. */
 
 /*
  * Simple parameterized tests. Calls test_function(idx) for each 0 <= idx < num.

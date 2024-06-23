@@ -567,7 +567,6 @@ our %disabled = ( # "what"         => "comment"
                   "ntls"                => "default",
                   "rc5"                 => "default",
                   "sctp"                => "default",
-                  "sm2_threshold"       => "default",
                   "ssl3"                => "default",
                   "ssl3-method"         => "default",
                   "trace"               => "default",

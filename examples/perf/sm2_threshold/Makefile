@@ -1,12 +1,13 @@
 CC=gcc
-CFLAGS=-I/opt/tongsuo/include
-LDFLAGS=-L/opt/tongsuo/lib
+CFLAGS=-I/home/chase511/code_2023/Tongsuo/include
+LDFLAGS=-L/home/chase511/code_2023/Tongsuo/
 
 %.o: %.c
 	$(CC) -c -o $@ $< $(CFLAGS) -O2
 
 threshold: threshold.o
-	$(CC) -o threshold threshold.o -lcrypto $(LDFLAGS)
+	$(CC) -o threshold threshold.o -lcrypto $(LDFLAGS)  -Wl,-rpath=/home/chase511/code_2023/Tongsuo
+
 
 clean:
 	rm -rf *.o threshold
