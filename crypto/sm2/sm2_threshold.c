@@ -63,7 +63,7 @@ EVP_PKEY *SM2_THRESHOLD_derive_partial_pubkey(const EVP_PKEY *key)
     if (!ossl_ec_group_do_inverse_ord(group, dA_inv, dA, ctx)
         || !EC_POINT_mul(group, P1, dA_inv, NULL, NULL, ctx))
         goto err;
-
+    
     ret = EVP_PKEY_new();
     if (ret == NULL)
         goto err;
@@ -303,7 +303,7 @@ int SM2_THRESHOLD_sign2(const EVP_PKEY *key, const EVP_PKEY *peer_Q1,
     eckey = EVP_PKEY_get0_EC_KEY(peer_Q1);
     if (eckey == NULL)
         return 0;
-
+    
     Q1 = EC_KEY_get0_public_key(eckey);
     if (Q1 == NULL)
         return 0;

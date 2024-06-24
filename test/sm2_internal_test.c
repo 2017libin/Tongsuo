@@ -344,6 +344,7 @@ static int test_sm2_sign(const EC_GROUP *group,
 
     ECDSA_SIG_get0(sig, &sig_r, &sig_s);
 
+
     if (!TEST_true(BN_hex2bn(&r, r_hex))
             || !TEST_true(BN_hex2bn(&s, s_hex))
             || !TEST_BN_eq(r, sig_r)
